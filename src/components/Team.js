@@ -177,16 +177,21 @@ const Team = () => {
       LinkedIn
     </Button>
     <Button
-      variant="outlined"
-      color="primary"
-      size="small"
-      style={{ margin: '0 0.5rem' }}
-      href={selectedMember.resume} // Use the resume variable
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Resume
-    </Button>
+  variant="outlined"
+  color="primary"
+  size="small"
+  style={{ margin: '0 0.5rem' }}
+  onClick={() => {
+    if (selectedMember.name === 'Andy Zheng') {
+      window.location.href = '/andyresume'; // Route to Andy's resume page
+    } else if (selectedMember.name === 'Zachary Teaford') {
+      window.location.href = '/zachresume'; // Route to Zach's resume page
+    }
+  }}
+>
+  Resume
+</Button>
+
     <Button
       variant="outlined"
       color="primary"
