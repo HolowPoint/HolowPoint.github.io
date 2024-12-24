@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import AppRoutes from './router'; // Notice the import from router.js
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       {/* All the routes are handled in router.js now */}
       <AppRoutes />
+      <Footer />
     </div>
   );
 }
