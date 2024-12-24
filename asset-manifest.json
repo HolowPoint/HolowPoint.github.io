@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/HolowPoint/Techwood.git/static/js/main.de1fc3a5.js",
-    "index.html": "/HolowPoint/Techwood.git/index.html",
-    "main.de1fc3a5.js.map": "/HolowPoint/Techwood.git/static/js/main.de1fc3a5.js.map"
+    "main.js": "/Techwood-Capital/static/js/main.de1fc3a5.js",
+    "index.html": "/Techwood-Capital/index.html",
+    "main.de1fc3a5.js.map": "/Techwood-Capital/static/js/main.de1fc3a5.js.map"
   },
   "entrypoints": [
     "static/js/main.de1fc3a5.js"
