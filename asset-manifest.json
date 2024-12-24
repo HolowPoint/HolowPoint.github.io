@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/Techwood-Capital/static/js/main.de1fc3a5.js",
-    "index.html": "/Techwood-Capital/index.html",
-    "main.de1fc3a5.js.map": "/Techwood-Capital/static/js/main.de1fc3a5.js.map"
+    "main.js": "/static/js/main.de1fc3a5.js",
+    "index.html": "/index.html",
+    "main.de1fc3a5.js.map": "/static/js/main.de1fc3a5.js.map"
   },
   "entrypoints": [
     "static/js/main.de1fc3a5.js"
