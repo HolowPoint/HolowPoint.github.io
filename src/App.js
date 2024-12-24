@@ -1,15 +1,26 @@
-// src/App.js
 import React from 'react';
 import Navbar from './components/Navbar';
-import AppRoutes from './router'; // Notice the import from router.js
+import AppRoutes from './router'; // Routes file for your app's pages
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh', // Full viewport height
+      }}
+    >
+      {/* Navbar at the top */}
       <Navbar />
-      {/* All the routes are handled in router.js now */}
-      <AppRoutes />
+
+      {/* Main content */}
+      <div style={{ flex: 1 }}>
+        <AppRoutes />
+      </div>
+
+      {/* Footer at the bottom */}
       <Footer />
     </div>
   );

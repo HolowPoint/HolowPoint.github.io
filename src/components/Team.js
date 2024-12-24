@@ -11,12 +11,15 @@ const Team = () => {
       name: 'Andy Zheng',
       role: 'Georgia Tech CS Major',
       bio: `Andy Zheng is a Computer Science major specializing in backend development 
-      and machine learning. He has experience in building scalable applications and 
-      enjoys contributing to open-source projects.`,
+        and machine learning. He has experience in building scalable applications and 
+        enjoys contributing to open-source projects.`,
       description: `At Techwood Capital, Andy Zheng leads the technical team, focusing on 
-      developing innovative solutions for data analytics and optimizing the company's 
-      digital infrastructure.`,
+        developing innovative solutions for data analytics and optimizing the company's 
+        digital infrastructure.`,
       image: '/assets/headshots/andy.jpeg',
+      linkedin: 'https://linkedin.com/in/andyzheng', // LinkedIn URL
+      resume: 'https://example.com/resume.pdf', // Resume URL
+      website: 'https://andyzheng.com', // Personal Website URL
     },
     {
       id: 2,
@@ -29,8 +32,12 @@ const Team = () => {
       Terminal empower strategic decision-making and enhance the firm's financial analysis 
       capabilities.`,
       image: '/assets/headshots/alaska.jpeg',
+      linkedin: 'https://www.linkedin.com/in/zachary-teaford/', // LinkedIn URL
+      resume: 'https://example.com/resume.pdf', // Resume URL
+      website: 'https://andyzheng.com', // Personal Website URL
     },
   ];
+  
 
   const handleOpen = (member) => {
     setSelectedMember(member);
@@ -62,7 +69,6 @@ const Team = () => {
       >
         Team
       </Typography>
-
       <Grid container spacing={4}>
         {teamMembers.map((member) => (
           <Grid
@@ -107,58 +113,105 @@ const Team = () => {
           </Grid>
         ))}
       </Grid>
-
       {selectedMember && (
-        <Modal open={open} onClose={handleClose}>
-          <Box
-            sx={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              bgcolor: 'white',
-              padding: '3rem',
-              borderRadius: '10px',
-              boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
-              width: '500px',
-              maxWidth: '90%',
-              textAlign: 'center',
-            }}
-          >
-            <img
-              src={selectedMember.image}
-              alt={selectedMember.name}
-              style={{
-                width: '120px',
-                height: '120px',
-                borderRadius: '50%',
-                marginBottom: '1.5rem',
-              }}
-            />
-            <Typography variant="h3" gutterBottom>
-              {selectedMember.name}
-            </Typography>
-            <Typography variant="h5" color="textSecondary" gutterBottom>
-              {selectedMember.role}
-            </Typography>
-            <Typography
-              variant="body1"
-              style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}
-            >
-              {selectedMember.bio}
-            </Typography>
-            <Typography
-              variant="body2"
-              style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}
-            >
-              {selectedMember.description}
-            </Typography>
-            <Button variant="contained" onClick={handleClose}>
-              Close
-            </Button>
-          </Box>
-        </Modal>
-      )}
+  <Modal open={open} onClose={handleClose}>
+    <Box
+      sx={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        bgcolor: 'white',
+        padding: '3rem',
+        borderRadius: '10px',
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
+        width: '500px',
+        maxWidth: '90%',
+        textAlign: 'center',
+      }}
+    >
+      <img
+        src={selectedMember.image}
+        alt={selectedMember.name}
+        style={{
+          width: '120px',
+          height: '120px',
+          borderRadius: '50%',
+          marginBottom: '1.5rem',
+        }}
+      />
+      <Typography variant="h3" gutterBottom>
+        {selectedMember.name}
+      </Typography>
+      <Typography variant="h5" color="textSecondary" gutterBottom>
+        {selectedMember.role}
+      </Typography>
+      <Typography
+        variant="body1"
+        style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}
+      >
+        {selectedMember.bio}
+      </Typography>
+      <Typography
+        variant="body2"
+        style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}
+      >
+        {selectedMember.description}
+      </Typography>
+
+      {/* Hyperlinks Section */}
+      <div style={{ marginBottom: '1.5rem' }}>
+  <Typography variant="body2" color="textSecondary">
+    Find me on:
+  </Typography>
+  <div style={{ marginTop: '0.5rem' }}>
+    <Button
+      variant="outlined"
+      color="primary"
+      size="small"
+      style={{ margin: '0 0.5rem' }}
+      href={selectedMember.linkedin} // Use the linkedin variable
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn
+    </Button>
+    <Button
+      variant="outlined"
+      color="primary"
+      size="small"
+      style={{ margin: '0 0.5rem' }}
+      href={selectedMember.resume} // Use the resume variable
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Resume
+    </Button>
+    <Button
+      variant="outlined"
+      color="primary"
+      size="small"
+      style={{ margin: '0 0.5rem' }}
+      href={selectedMember.website} // Use the website variable
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Personal Website
+    </Button>
+  </div>
+</div>
+
+
+      <Button variant="contained" onClick={handleClose}>
+        Close
+      </Button>
+    </Box>
+  </Modal>
+)}
+
+
+
+
     </section>
   );
 };

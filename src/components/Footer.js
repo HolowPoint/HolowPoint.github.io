@@ -7,8 +7,10 @@ const Footer = () => {
       sx={{
         bgcolor: '#f5f5f5', // Light gray background
         py: 3, // Vertical padding
-        mt: 4, // Top margin
         borderTop: '1px solid #ddd', // Subtle border on top
+        width: '100%', // Ensure it spans the full width
+        position: 'relative', // Necessary for flexbox layout
+        bottom: 0, // Ensures it sits at the bottom of the container
       }}
     >
       <Grid container spacing={2} justifyContent="center">
