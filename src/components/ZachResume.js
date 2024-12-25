@@ -1,43 +1,104 @@
-import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Button, Modal } from '@mui/material';
 
 const ZachResume = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <Box
-      sx={{
-        padding: '2rem',
-        maxWidth: '800px',
-        margin: '2rem auto',
-        backgroundColor: '#f9f9f9',
-        border: '1px solid #ddd',
-        borderRadius: '10px',
-        boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+    <div
+      style={{
+        backgroundColor: '#fff', // White background
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        overflow: 'hidden', // Prevent scrolling
+        padding: '3.5rem',
       }}
     >
-      <Typography variant="h4" align="center" gutterBottom>
-        Zachary Teaford - Resume
-      </Typography>
-      <iframe
-        src="public\assets\resume\Zachary_Teaford_Resume.pdf" // Replace with Zach's PDF
-        style={{
-          width: '100%',
-          height: '600px',
-          border: 'none',
-          marginTop: '1rem',
+      <Box
+        sx={{
+          maxWidth: '90%',
+          textAlign: 'center',
+          marginBottom: '1.5rem',
         }}
-        title="Zachary Teaford Resume"
-      />
-      <Button
-        href="public\assets\resume\Zachary_Teaford_Resume.pdf" // Replace with Zach's PDF
-        download
-        variant="contained"
-        color="primary"
-        fullWidth
-        sx={{ marginTop: '1rem' }}
       >
-        Download Resume
-      </Button>
-    </Box>
+        <img
+          src="/assets/resume/Zachary_Teaford_Resume-1.png" // Path to Zach's resume image
+          alt="Zachary Teaford Resume"
+          style={{
+            width: '35%', // Slightly larger size
+            height: 'auto',
+            marginBottom: '1.5rem',
+            cursor: 'pointer', // Pointer to indicate clickable
+            boxShadow: '0 8px 20px rgba(0,0,0,0.3)', // Enhanced shadow for aesthetics
+            borderRadius: '8px', // Rounded edges for a modern look
+          }}
+          onClick={handleOpen} // Open modal on click
+        />
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          textAlign: 'center',
+        }}
+      >
+        <Button
+          href="/assets/resume/Zachary_Teaford_Resume.pdf" // Path to Zach's resume PDF
+          download="ZacharyTeafordResume"
+          variant="contained"
+          sx={{
+            backgroundColor: '#1976d2',
+            color: '#fff',
+            padding: '0.75rem 2rem',
+            fontSize: '1rem',
+            textTransform: 'none',
+            borderRadius: '25px',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              backgroundColor: '#145a9e',
+              transform: 'scale(1.05)', // Subtle hover effect
+            },
+          }}
+        >
+          Download PDF
+        </Button>
+      </Box>
+
+      {/* Modal for Full-Screen View */}
+      <Modal open={open} onClose={handleClose}>
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.9)', // Dark background
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <img
+            src="/assets/resume/Zachary_Teaford_Resume-1.png" // Full-screen image
+            alt="Zachary Teaford Resume"
+            style={{
+              maxWidth: '90%',
+              maxHeight: '90%',
+              border: '2px solid #fff',
+              borderRadius: '8px',
+            }}
+            onClick={handleClose} // Close modal on click
+          />
+        </Box>
+      </Modal>
+    </div>
   );
 };
 
